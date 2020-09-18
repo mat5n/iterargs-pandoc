@@ -43,7 +43,7 @@ iterargsI18n = {
       "heading": "Gestures",
       "text": "Left and right swipes are recognised everywhere and produce mostly intuitive results."
     },
-    "version": {"text": "iterargs-pandoc 0.1.0", "link": "https://github.com/mat5n/iterargs-pandoc"}
+    "version": {"text": "iterargs-pandoc 0.1.1", "link": "https://github.com/mat5n/iterargs-pandoc"}
   },
   "errors": {
     "broken-link": "Link target doesn't exist"

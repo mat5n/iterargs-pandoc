@@ -174,6 +174,34 @@ figcaption {
     background-color: inherit;
 }
 
+.ia-nav-text {
+    display: inline-block;
+    box-sizing: border-box;
+    height: 30px;
+    width: 210px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.ia-nav-text.ia-level2 { padding-left:  5px; }
+.ia-nav-text.ia-level3 { padding-left: 10px; }
+.ia-nav-text.ia-level4 { padding-left: 15px; }
+.ia-nav-text.ia-level5 { padding-left: 20px; }
+.ia-nav-text.ia-level6 { padding-left: 25px; }
+
+.ia-nav-button {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    width: 20px;
+    padding-right: 10px;
+    text-align: right;
+    color: #ddd;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 999px) {
     #ia-set-section {
 	display: none;

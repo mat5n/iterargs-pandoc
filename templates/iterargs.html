@@ -48,13 +48,9 @@ $endfor$
 $body$
 </div>
 <script>
-function typesetMath () {
-  MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-}
-
 var iterargsConfig = {
   "hooks": {
-    "reload": [typesetMath]
+    "reload": [MathJax.typeset]
   }
 }
 </script>

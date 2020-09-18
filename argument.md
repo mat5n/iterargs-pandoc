@@ -14,6 +14,8 @@ mus.  Nulla posuere.  Donec vitae dolor.  Nullam tristique diam non
 turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam vestibulum
 accumsan nisl.
 
+## Aliquam posuere
+
 Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec
 facilisis facilisis, est dui fermentum leo, quis tempor ligula erat
 quis odio.  Nunc porta vulputate tellus.  Nunc rutrum turpis sed pede.
@@ -32,6 +34,8 @@ pulvinar nibh.  Nam a sapien.
 Zak Johnson and Harvey Dean[^o1]
 ::::
 
+## Nulla posuere
+
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec
 hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam
 nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis
@@ -44,14 +48,16 @@ accumsan nisl.
 
 [ofng]: http://www.fantasynamegenerators.com
 
-## Subheading
+### Nam vestibulum *accusam* nisl
 
-Math is supported via MathJax:
+Math is supported via [MathJax][mjax]:
 $$
 \langle \phi | \psi \rangle = \int \phi(x) \psi^*(x) \, dx.
 $$
 Any other math library could be used equally well by slightly adapting
 the template.
+
+[mjax]: https://www.mathjax.org
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec
 hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam
@@ -63,6 +69,8 @@ accumsan nisl.
 
 ![A figure followed by a caption: Lorem ipsum dolor sit amet,
 consectetuer adipiscing elit.](images/dummyplot.svg)
+
+## Fermentum tempor
 
 Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In id erat non
 orci commodo lobortis.  Proin neque massa, cursus ut, gravida ut,
