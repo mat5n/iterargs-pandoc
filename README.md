@@ -15,9 +15,7 @@ compiles into HTML.  See [here][res] for the result.
 
 ## Getting Pandoc
 
-Follow the [installation instructions][pd-inst].  If you use a package
-manager (like Homebrew) and it doesn't install `pandoc-citeproc` with
-Pandoc (as Homebrew doesn't), you should install that as well.
+Follow the [installation instructions][pd-inst].
 
 [pd-inst]: https://pandoc.org/installing.html
 

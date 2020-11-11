@@ -1,9 +1,11 @@
 
-index.html: argument.md biblio.bib templates/iterargs.html
+BIB = biblio.bib
+TEMPLATE = templates/iterargs.html
+
+index.html: argument.md $(BIB) $(TEMPLATE)
 	pandoc -t html5 -s --mathjax \
-	  --template=templates/iterargs.html \
+	  --template=$(TEMPLATE) \
 	  --highlight-style=tango \
-	  --filter=pandoc-citeproc \
-	  --bibliography=biblio.bib \
+	  --citeproc --bibliography=$(BIB) \
 	  --metadata=link-citations=true \
-	  -o $@ argument.md
+	  -o $@ $<
