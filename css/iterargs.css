@@ -362,7 +362,7 @@ figcaption {
 
 a {
     text-decoration: none;
-    color: #973253;
+    color: rgb(6, 69, 173);
 }
 
 a:hover {
@@ -370,7 +370,7 @@ a:hover {
 }
 
 .ia-flash {
-    background-color: rgb(255,170,197);
+    background-color: #eaf3ff;
 }
 
 * {
