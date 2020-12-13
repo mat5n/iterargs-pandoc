@@ -1,4 +1,8 @@
 
+<p align="center">
+  <img width="64" height="64" src="images/logo.svg">
+</p>
+
 # Pandoc template for iterative arguments
 
 This [Pandoc][pd-org] template facilitates an argument where two
@@ -23,7 +27,7 @@ Follow the [installation instructions][pd-inst].
 
 Download the latest release either as a zip or tar.gz file.
 
-Alternatively, you can clone the repository by issuing the command
+Alternatively, you can clone the repository by
 
 ```
 git clone https://github.com/mat5n/iterargs-pandoc.git
@@ -44,8 +48,8 @@ be quite useful.)
 ## Terminology 
 
 The side of the argument making the first move, and then updating
-their argument on odd-numbered iterations, is called *the Odd side*
-or, simply, *Odd*.  The other side of the argument is called *the Even
+their argument on odd-numbered iterations, is called *the odd side*
+or, simply, *Odd*.  The other side of the argument is called *the even
 side* or, simply, *Even*.
 
 ## Document structure
@@ -142,7 +146,7 @@ to http://localhost:8000 and you should see your document.
 ## Language files
 
 All snippets of text in the app can be changed by modifying the
-language file.  This is located in `js/i18n/texts.js`.
+language file.  This is located in `js/i18n/en.js`.
 
 ## Publishing the document
 
@@ -153,9 +157,9 @@ the following files
 ```
 index.html
 css/iterargs.css
-js/hammer.min.js
+images/*
 js/iterargs.js
-js/i18n/texts.js
+js/i18n/en.js
 ```
 
 No harm is done if you include all the files in the template.  This is

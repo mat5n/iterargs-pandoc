@@ -203,8 +203,10 @@ menu or with the keyboard shortcuts `Shift+O` and `Shift+E`.  Press
    Nullam tristique diam non turpis.  Cras placerat accumsan nulla.
    Nullam rutrum.  Nam vestibulum accumsan nisl.
 
-2. All features of Pandoc can of course be used, including citations 
-   [@vanrossum95; @hickey08].
+2. Pellentesque condimentum, magna ut suscipit hendrerit, ipsum augue
+   ornare nulla, non luctus diam neque sit amet urna.  Nunc porta
+   vulputate tellus.  Praesent augue.  All features of Pandoc can of
+   course be used, including citations [@hickey08; @hickey20].
 
 3. Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi
    nec facilisis facilisis, est dui fermentum leo, quis tempor ligula

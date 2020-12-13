@@ -11,6 +11,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
@@ -71,18 +72,22 @@ code span.vs { color: #4e9a06; } /* VerbatimString */
 code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="icon" type="image/png" href="images/favicon-64.png">
   <link href="https://fonts.googleapis.com/css2?family=Cardo:ital@0;1&family=Oswald:wght@200;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/iterargs.css">
-  <script src="js/i18n/texts.js"></script>
-  <script src="js/hammer.min.js"></script>
+  <script src="js/i18n/en.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
 </head>
 <body>
-<p id="ia-loading" style="padding-top: 40px; text-align: center; font-style: italic;">Loading...</p> 
-<div id="ia-app" style="display: none;">
+<p id="ia-loading" style="padding-top: 40px; text-align: center; font-family: Helvetica; font-style: italic; font-size: 14px">
+  <img src="images/logo.svg" width="48" height="48"><br><br>
+  Loading
+</p>
+<div id="ia-doc" style="display: none;">
 <h1 id="introduction">Introduction</h1>
 <p>A short introduction to what is the topic of the argument.</p>
 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla posuere. Donec vitae dolor. Nullam tristique diam non turpis. Cras placerat accumsan nulla. Nullam rutrum. Nam vestibulum accumsan nisl.</p>
@@ -133,20 +138,20 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>If you’d rather not see the highlights, you can turn them off in the menu or with the keyboard shortcuts <code>Shift+O</code> and <code>Shift+E</code>. Press <code>H</code> for other shortcuts.</p>
 <ol type="1">
 <li><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus. <span id="ol1">Some text that Odd has wanted to link to. A highlight would perhaps have been better for its bidirectionality.</span> Donec vitae dolor. Nullam tristique diam non turpis. Cras placerat accumsan nulla. Nullam rutrum. Nam vestibulum accumsan nisl.</p></li>
-<li><p>All features of Pandoc can of course be used, including citations <span class="citation" data-cites="vanrossum95 hickey08">(<a href="#ref-vanrossum95" role="doc-biblioref">Van Rossum and Drake Jr 1995</a>; <a href="#ref-hickey08" role="doc-biblioref">Hickey 2008</a>)</span>.</p></li>
+<li><p>Pellentesque condimentum, magna ut suscipit hendrerit, ipsum augue ornare nulla, non luctus diam neque sit amet urna. Nunc porta vulputate tellus. Praesent augue. All features of Pandoc can of course be used, including citations <span class="citation" data-cites="hickey08 hickey20">(<a href="#ref-hickey08" role="doc-biblioref">Hickey 2008</a>, <a href="#ref-hickey20" role="doc-biblioref">2020</a>)</span>.</p></li>
 <li><p>Nullam eu ante vel est convallis dignissim. Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio. Nunc porta vulputate tellus. Nunc rutrum turpis sed pede. Sed bibendum. Aliquam posuere. Nunc aliquet, augue nec adipiscing interdum, lacus tellus malesuada massa, quis varius mi purus non odio. Pellentesque condimentum, magna ut suscipit hendrerit, ipsum augue ornare nulla, non luctus diam neque sit amet urna. Curabitur vulputate vestibulum lorem. Fusce sagittis, libero non molestie mollis, magna orci ultrices dolor, at vulputate neque nulla lacinia eros. Sed id ligula quis est convallis tempor. Curabitur lacinia pulvinar nibh. Nam a sapien.</p></li>
 </ol>
 <h1 id="back-matter">Back matter</h1>
 <h2 class="unnumbered" id="references">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-hickey08" class="csl-entry" role="doc-biblioentry">
-Hickey, Rich. 2008. <span>“The Clojure Programming Language.”</span> In <em>Proceedings of the 2008 Symposium on Dynamic Languages</em>. New York, NY, USA: ACM. <a href="http://doi.acm.org/10.1145/1408681.1408682">http://doi.acm.org/10.1145/1408681.1408682</a>.
+Hickey, Rich. 2008. <span>“The Clojure Programming Language.”</span> In <em>Proceedings of the 2008 Symposium on Dynamic Languages</em>. DLS ’08. New York, NY, USA: Association for Computing Machinery. <a href="https://doi.org/10.1145/1408681.1408682">https://doi.org/10.1145/1408681.1408682</a>.
 </div>
-<div id="ref-vanrossum95" class="csl-entry" role="doc-biblioentry">
-Van Rossum, Guido, and Fred L Drake Jr. 1995. <em>Python Reference Manual</em>. Centrum voor Wiskunde en Informatica Amsterdam.
+<div id="ref-hickey20" class="csl-entry" role="doc-biblioentry">
+———. 2020. <span>“A History of Clojure.”</span> <em>Proceedings of the ACM on Programming Languages</em> 4 (HOPL): 1–46. <a href="https://doi.org/10.1145/3386321">https://doi.org/10.1145/3386321</a>.
 </div>
 </div>
-<section class="footnotes" role="doc-endnotes">
+<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr />
 <ol>
 <li id="fn1" role="doc-endnote"><p>Names randomly generated by <a href="http://www.fantasynamegenerators.com">Fantasy Name Generator</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>

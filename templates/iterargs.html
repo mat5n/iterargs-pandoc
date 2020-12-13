@@ -27,10 +27,11 @@ $for(css)$
   <link rel="stylesheet" href="$css$">
 $endfor$
   <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="icon" type="image/png" href="images/favicon-64.png">
   <link href="https://fonts.googleapis.com/css2?family=Cardo:ital@0;1&family=Oswald:wght@200;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/iterargs.css">
-  <script src="js/i18n/texts.js"></script>
-  <script src="js/hammer.min.js"></script>
+  <script src="js/i18n/en.js"></script>
 $if(math)$
   $math$
 $endif$
@@ -45,8 +46,11 @@ $endfor$
 $for(include-before)$
 $include-before$
 $endfor$
-<p id="ia-loading" style="padding-top: 40px; text-align: center; font-style: italic;">Loading...</p> 
-<div id="ia-app" style="display: none;">
+<p id="ia-loading" style="padding-top: 40px; text-align: center; font-family: Helvetica; font-style: italic; font-size: 14px">
+  <img src="images/logo.svg" width="48" height="48"><br><br>
+  Loading
+</p>
+<div id="ia-doc" style="display: none;">
 $body$
 </div>
 <script>

@@ -12,11 +12,24 @@ body {
     z-index: 0;
 }
 
-#ia-app {
+#ia-doc {
     font-family: 'Cardo', serif;
     font-size: 18px;
     color: #333333;
 }    
+
+main {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    transition: right 0.4s;
+}
+
+main.ia-gap {
+    right: 250px;
+}
 
 .ia-hidden {
     display: none;
@@ -39,9 +52,12 @@ body {
     margin: 40px auto 20px;
 }
 
+#ia-odd-container {
+    border-right: 1px solid lightgray;
+}
+
 .ia-split #ia-odd-container {
     right: 50%;
-    border-right: 1px solid lightgray;
 }
 
 .ia-split #ia-even-container {
@@ -94,23 +110,25 @@ figcaption {
 /* Peek back */
 
 #ia-back-container {
+    border-top: 1px solid lightgray;
     z-index: 1;
 }
 
 .ia-peek #ia-back-container {
     bottom: 0px;
     top: 65%;
-    border-top: 1px solid #aaa;
-    /*box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.2);*/
 }
 
 #ia-peek-back-close {
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    font-weight: 200;
+    line-height: 1;
     display: none;
     position: absolute;
     top: 65%;
+    transform: translateY(-10px);
     right: 5px;
-    font-size: 20px;
-    line-height: 1;
     z-index: 2;
     cursor: pointer;
 }
@@ -119,22 +137,39 @@ figcaption {
     display: initial;
 }
 
-.ia-peek.ia-anim-on #ia-peek-back-close {
+.ia-peek.ia-anim-playing #ia-peek-back-close {
     display: none;
 }
 
 /* Menu */
 
-#ia-menu-container {
+#ia-menu {
     font-family: 'Oswald', sans-serif;
     font-size: 16px;
     font-weight: 200;
     left: auto;
+    right: -250px;
     width: 250px;
     z-index: 3;
     background-color: rgba(0,0,0,0.8);
     color: #ddd;
     box-shadow: 0px 0px 6px 2px rgba(0,0,0,0.4);
+    display: none;
+    transition: right 0.4s;
+}
+
+#ia-menu.ia-fixed {
+    background-color: #333;
+    box-shadow: none;
+}
+
+#ia-menu.ia-open {
+    display: initial;
+    right: 0px;
+}
+
+#ia-menu.ia-sliding {
+    display: initial;
 }
 
 #ia-menu-button {
@@ -149,7 +184,7 @@ figcaption {
     cursor: pointer;
 }
 
-.ia-menu-on #ia-menu-button {
+#ia-menu-button.ia-open {
     color: #ddd;
 }
 
@@ -170,6 +205,7 @@ figcaption {
     padding: 2px 0px 2px;
     text-align: center;
     text-transform: uppercase;
+    letter-spacing: 2px;
     color: #aaa;
 }
 
@@ -222,11 +258,13 @@ figcaption {
     cursor: pointer;
 }
 
+/*
 @media screen and (max-width: 999px) {
     #ia-set-section {
 	display: none;
     }
 }
+*/
 
 /* Switches */
 
@@ -287,26 +325,25 @@ figcaption {
     position: absolute;
     top: 2px;
     left: 2px;
-    z-index: 1;
+    z-index: 2;
     font-family: 'Oswald', sans-serif;
     font-size: 14px;
     line-height: 24px;
+    cursor: pointer;
 }
 
 .ia-split #ia-navbar {
     display: none;
 }
 
-#ia-navtext-long, #ia-navtext-short {
+.ia-navtext {
     padding-left: 3px;
     padding-right: 5px;
-    cursor: pointer;
 }
 
-#ia-back-symbol {
+.ia-back-symbol {
     padding-left: 3px;
     font-size: 17px;
-    cursor: pointer;
 }
 
 @media screen and (min-width: 801px) {
@@ -315,7 +352,7 @@ figcaption {
     }
 }
 
-@media screen and (min-width: 671px) and (max-width: 800px) {
+@media screen and (max-width: 800px) {
     #ia-navtext-long {
 	display: none;
     }
@@ -327,56 +364,86 @@ figcaption {
 	border: 1px solid lightgray;
 	border-radius: 12px;
     }
-
-    #ia-navtext-long {
-	display: none;
-    }
 }
 
 /* Help */
 
-#ia-help table {
-    font-size: 14px;
-    border-collapse: collapse;
-    border: 1px solid lightgray;
-    width: 100%;
+#ia-help {
+    display: none;
+    color: #ddd;
+    box-sizing: border-box;
+    padding: 20px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    z-index: 5;
 }
 
-#ia-help tr:nth-child(even) {
-    background-color: #f2f2f2;
+#ia-help.ia-open {
+    display: initial;
 }
 
-#ia-help th {
-    text-align: left;
-    border-bottom: 1px solid lightgray;
+@media screen and (min-width: 420px) {
+    #ia-help {
+	background-color: rgba(0,0,0,0.8);
+	border-radius: 30px;
+	left: 10px;
+	right: auto;
+	width: 400px;
+	bottom: 10px;
+    }
+
+    @media screen and (max-height: 619px) {
+	#ia-help {
+	    top: 10px;
+	}
+    }
+
+    @media screen and (min-height: 620px) {
+	#ia-help {
+	    top: auto;
+	    height: 600px;
+	}
+    }
 }
 
-#ia-help th:first-child, #ia-help td:first-child {
-    padding: 5px 5px 5px 15px;
+@media screen and (max-width: 419px) {
+    #ia-help {
+	background-color: #333;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+    }
 }
 
-#ia-help th:last-child, #ia-help td:last-child {
-    padding: 5px 15px 5px 10px;
+#ia-help td:nth-child(1) {
+    text-align: right;
+    vertical-align: top;
+}
+
+#ia-help td:nth-child(2) {
+    padding-left: 5px;
+    padding-right: 5px;
+    vertical-align: top;
+}
+
+#ia-help kbd {
+    color: yellow;
 }
 
 .ia-keyseq {
     white-space: nowrap;
 }
 
-#ia-help kbd {
-    display: inline-block;
-    font-size: 12px;
-    background-color: white;
-    padding: 1px 8px;
-    border: 1px solid lightgray;
-    border-radius: 4px;
-    box-shadow: 0px 2px lightgray;
-    margin: 2px;
+#ia-version {
+    padding-top: 20px;
+    font-size: 14px;
+    text-align: center;
 }
 
-#ia-version {
-    font-size: 10px;
-    text-align: center;
+#ia-version a {
+    color: #ddd;
 }
 
 /* Links */
@@ -391,7 +458,7 @@ a:hover {
 }
 
 .ia-flash {
-    background-color: #eaf3ff;
+    background-color: #eaf3ff !important;
 }
 
 * {
@@ -418,6 +485,33 @@ a:hover {
 
 .ia-hl-on.ia-hl-sel[data-hl-even] {
     background-color: #8CBE5F;
+}
+
+/* Error view */
+
+#ia-error {
+    font-family: 'Cardo', serif;
+    font-size: 20px;
+    line-height: 1.5;
+    max-width: 640px;
+    margin: 50px auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#ia-error > img {
+    transform-origin: top right;
+    transition: transform 0.7s;
+    transition-timing-function: ease-in-out;
+}
+
+#ia-error code {
+    font-size: 18px;
+}
+
+#ia-error pre {
+    font-size: 15px;
+    white-space: pre-wrap;
 }
 
 /* Animations */
@@ -503,8 +597,7 @@ a:hover {
     to { top: 0px; bottom: 0px; }
 }
 
-#ia-back-container.ia-in, #ia-help-container.ia-in,
-#ia-back-container.ia-out, #ia-help-container.ia-out {
+#ia-back-container.ia-in, #ia-back-container.ia-out {
     animation-name: ia-back-in;
 }
 
@@ -515,7 +608,7 @@ a:hover {
 
 #ia-back-container.ia-peek-in, #ia-back-container.ia-peek-out {
     animation-name: ia-peek-in;
-    border-top: 1px solid #aaa;
+    /*border-top: 1px solid #aaa;*/
 }
 
 @keyframes ia-peek-to-full {
@@ -525,15 +618,5 @@ a:hover {
 
 #ia-back-container.ia-peek-to-full, #ia-back-container.ia-full-to-peek {
     animation-name: ia-peek-to-full;
-    border-top: 1px solid #aaa;
-}
-
-@keyframes ia-menu-in {
-    from { right: -250px; }
-    to { right: 0px; }
-}
-
-#ia-menu-container.ia-in, #ia-menu-container.ia-out {
-    animation-name: ia-menu-in;
-    animation-delay: 0s;
+    /*border-top: 1px solid #aaa;*/
 }
