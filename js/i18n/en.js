@@ -5,8 +5,7 @@ iterargsTexts = {
     "intro": {"long": "Introduction", "short": "I"},
     "odd":   {"long": "Odd", "short": "O"},
     "even":  {"long": "Even", "short": "E"},
-    "back":  {"long": "Back matter", "short": "B"},
-    "help":  {"long": "Help", "short": "?"}
+    "back":  {"long": "Back matter", "short": "B"}
   },
   "menu": {
     "headings": {
@@ -20,10 +19,9 @@ iterargsTexts = {
     }
   },
   "help": {
+    "heading": "Help",
     "keys" : {
       "heading": "Shortcuts",
-      "shortcut": "Shortcut",
-      "description": "Description",
       "shortcuts": {
 	"goto-odd": "Go to Odd's argument",
 	"goto-even": "Go to Even's argument",
@@ -46,7 +44,7 @@ iterargsTexts = {
       "text": "Left and right swipes are recognised everywhere and produce mostly intuitive results."
     },
     "version": {
-      "text": "iterargs-pandoc 0.3.1",
+      "text": "iterargs-pandoc 0.3.2",
       "link": "https://github.com/mat5n/iterargs-pandoc"
     }
   },
