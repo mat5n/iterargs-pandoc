@@ -90,11 +90,11 @@ Zak Johnson and Harvey Dean
 Highlights can be used to create a bidirectional link between the two
 sides of the argument.  As many elements as you like can be part of a
 highlight.  To create a highlight, add the attribute `hl-odd=xyz` or
-`hl-even=xyz` to any element, depending whether your Odd or Even.  The
-`xyz` part is a unique label that's up to you.
+`hl-even=xyz` to any element, depending whether you're Odd or Even.
+The `xyz` part is a unique label that's up to you.
 
 [Pandoc's native syntax for spans][pd-divs] is useful here.  Below is
-a demo of the Odd side's having added a highlight to Even's argument
+an example of Odd having added a highlight to Even's argument
 consisting of two separate snippets of text.  The label they've chosen
 is `foo`:
 
