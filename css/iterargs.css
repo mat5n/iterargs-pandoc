@@ -107,6 +107,14 @@ figcaption {
     margin-bottom: 10px;
 }
 
+/* Icons */
+
+.ia-icon {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
 /* Peek back */
 
 #ia-back-container {
@@ -120,17 +128,17 @@ figcaption {
 }
 
 #ia-peek-back-close {
-    font-family: 'Oswald', sans-serif;
-    font-size: 40px;
-    font-weight: 200;
-    line-height: 1;
     display: none;
     position: absolute;
     top: 65%;
-    transform: translateY(-10px);
+    transform: translateY(5px);
     right: 5px;
     z-index: 2;
     cursor: pointer;
+}
+
+#ia-peek-back-close .ia-cross {
+    fill: #333;
 }
 
 .ia-peek #ia-peek-back-close {
@@ -176,17 +184,17 @@ figcaption {
 #ia-menu-button {
     z-index: 4;
     position: fixed;
-    top: -3px;
-    right: 5px;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 200;
-    font-size: 28px;
-    line-height: 1;
+    top: 8px;
+    right: 7px;
     cursor: pointer;
 }
 
-#ia-menu-button.ia-open {
-    color: #ddd;
+#ia-menu-button .ia-burger {
+    fill: #333;
+}
+
+#ia-menu-button.ia-open .ia-burger {
+    fill: #ddd;
 }
 
 .ia-menu-section {
@@ -369,40 +377,66 @@ figcaption {
 
 /* Help */
 
-#ia-help {
-    position: fixed;
-    display: none;
-    color: #ddd;
-    box-sizing: border-box;
-    padding: 20px;
-    font-family: 'Oswald', sans-serif;
-    font-size: 16px;
-    font-weight: 200;
-    z-index: 5;
+#ia-help-button {
+    position: absolute;
+    z-index: 8;
+    cursor: pointer;
 }
 
-#ia-help.ia-open {
+#ia-help-button .ia-cross {
+    fill: #ccc;
+}
+
+#ia-help-container {
+    position: fixed;
+    display: none;
+    z-index: 6;
+}
+
+#ia-help-container.ia-open {
     display: initial;
 }
 
+#ia-help {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    box-sizing: border-box;
+    padding: 20px;
+    z-index: 7;
+    color: #ddd;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+}
+
 @media screen and (min-width: 420px) {
-    #ia-help {
-	background-color: rgba(0,0,0,0.8);
-	border-radius: 30px;
+    #ia-help-container {
 	left: 10px;
 	right: auto;
 	width: 400px;
 	bottom: 10px;
     }
 
+    #ia-help {
+	background-color: rgba(0,0,0,0.8);
+	border-radius: 30px;
+    }
+
+    #ia-help-button {
+	top: 15px;
+	right: 15px;
+    }
+
     @media screen and (max-height: 619px) {
-	#ia-help {
+	#ia-help-container {
 	    top: 10px;
 	}
     }
 
     @media screen and (min-height: 620px) {
-	#ia-help {
+	#ia-help-container {
 	    top: auto;
 	    height: 600px;
 	}
@@ -410,12 +444,20 @@ figcaption {
 }
 
 @media screen and (max-width: 419px) {
-    #ia-help {
-	background-color: #333;
+    #ia-help-container {
 	left: 0px;
 	right: 0px;
 	top: 0px;
 	bottom: 0px;
+    }
+
+    #ia-help {
+	background-color: #333;
+    }
+
+    #ia-help-button {
+	top: 5px;
+	right: 5px;
     }
 }
 
