@@ -497,7 +497,7 @@ a {
     color: rgb(6, 69, 173);
 }
 
-a:hover {
+a.ia-hover {
     text-decoration: underline;
 }
 
@@ -519,7 +519,8 @@ a:hover {
     background-color: #FFFEAA;
 }
 
-.ia-hl-on.ia-hl-sel[data-hl-odd] {
+.ia-hl-on.ia-hl-sel[data-hl-odd],
+.ia-hl-on.ia-hl-sel[data-hl-odd] .ia-hl-on {
     background-color: #D4D46A;
 }
 
@@ -527,9 +528,17 @@ a:hover {
     background-color: #BCE498;
 }
 
-.ia-hl-on.ia-hl-sel[data-hl-even] {
+.ia-hl-on.ia-hl-sel[data-hl-even],
+.ia-hl-on.ia-hl-sel[data-hl-even] .ia-hl-on {
     background-color: #8CBE5F;
 }
+
+/*
+.ia-hl-on[data-hl-even] .ia-hl-on[data-hl-odd],
+.ia-hl-on[data-hl-odd] .ia-hl-on[data-hl-even] {
+    background-color: #DDF1A1;
+}
+*/
 
 /* Error view */
 
@@ -575,7 +584,7 @@ a:hover {
 
 @keyframes ia-odd-in-half {
     from { left: -50%; right: 100%; }
-    to { left: 0px; right: 50%; }
+    to { left: 0%; right: 50%; }
 }
 
 #ia-odd-container.ia-in-half, #ia-odd-container.ia-out-half {
@@ -584,7 +593,7 @@ a:hover {
 
 @keyframes ia-odd-in-full {
     from { left: -100%; right: 100%; }
-    to { left: 0px; right: 0px; }
+    to { left: 0%; right: 0%; }
 }
 
 #ia-odd-container.ia-in-full, #ia-odd-container.ia-out-full {
@@ -593,7 +602,7 @@ a:hover {
 
 @keyframes ia-even-in-half {
     from { left: 100%; right: -50%; }
-    to { left: 50%; right: 0px; }
+    to { left: 50%; right: 0%; }
 }
 
 #ia-even-container.ia-in-half, #ia-even-container.ia-out-half {
@@ -602,7 +611,7 @@ a:hover {
 
 @keyframes ia-even-in-full {
     from { left: 100%; right: -100%; }
-    to { left: 0px; right: 0px; }
+    to { left: 0%; right: 0%; }
 }
 
 #ia-even-container.ia-in-full, #ia-even-container.ia-out-full {
@@ -610,8 +619,8 @@ a:hover {
 }
 
 @keyframes ia-odd-half-to-full {
-    from { left: 0px; right: 50%; }
-    to { left: 0px; right: 0px; }
+    from { left: 0%; right: 50%; }
+    to { left: 0%; right: 0%; }
 }
 
 #ia-odd-container.ia-half-to-full, #ia-odd-container.ia-full-to-half {
@@ -619,8 +628,8 @@ a:hover {
 }
 
 @keyframes ia-even-half-to-full {
-    from { left: 50%; right: 0px; }
-    to { left: 0px; right: 0px; }
+    from { left: 50%; right: 0%; }
+    to { left: 0%; right: 0%; }
 }
 
 #ia-even-container.ia-half-to-full, #ia-even-container.ia-full-to-half {
@@ -629,7 +638,7 @@ a:hover {
 
 @keyframes ia-intro-in {
     from { top: -100%; bottom: 100%; }
-    to { top: 0px; bottom: 0px; }
+    to { top: 0%; bottom: 0%; }
 }
 
 #ia-intro-container.ia-in, #ia-intro-container.ia-out {
@@ -638,7 +647,7 @@ a:hover {
 
 @keyframes ia-back-in {
     from { top: 100%; bottom: -100%; }
-    to { top: 0px; bottom: 0px; }
+    to { top: 0%; bottom: 0%; }
 }
 
 #ia-back-container.ia-in, #ia-back-container.ia-out {
@@ -647,7 +656,7 @@ a:hover {
 
 @keyframes ia-peek-in {
     from { top: 100%; bottom: -35%; }
-    to { top: 65%; bottom: 0px; }
+    to { top: 65%; bottom: 0%; }
 }
 
 #ia-back-container.ia-peek-in, #ia-back-container.ia-peek-out {
@@ -656,8 +665,8 @@ a:hover {
 }
 
 @keyframes ia-peek-to-full {
-    from { top: 65%; bottom: 0px; }
-    to { top: 0px; bottom: 0px; }
+    from { top: 65%; bottom: 0%; }
+    to { top: 0%; bottom: 0%; }
 }
 
 #ia-back-container.ia-peek-to-full, #ia-back-container.ia-full-to-peek {
