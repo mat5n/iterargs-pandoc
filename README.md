@@ -1,27 +1,23 @@
 
-<p align="center">
-  <img width="64" height="64" src="images/logo.svg">
-</p>
-
 # Pandoc template for iterative arguments
 
-This [Pandoc][pd-org] template facilitates an argument where two
-competing theories are developed in parallel in an iterative manner so
-that both sides of the argument have to address the opposition from
-the very beginning.
+This [Pandoc][1] template facilitates an argument where two competing
+theories are developed in parallel in an iterative manner so that both
+sides of the argument have to address the opposition from the very
+beginning.
 
-The document is written in [Pandoc's markdown variant][pd-md] and
-compiles into HTML.  See [here][res] for the result.
+The document is written in [Pandoc's markdown variant][2] and compiles
+into HTML.  See [here][3] for the result.
 
-[pd-org]: http://pandoc.org 
-[pd-md]: https://pandoc.org/MANUAL.html#pandocs-markdown
-[res]: http://mat5n.github.io/iterargs-pandoc/
+[1]: http://pandoc.org
+[2]: https://pandoc.org/MANUAL.html#pandocs-markdown
+[3]: http://mat5n.github.io/iterargs-pandoc/
 
 ## Getting Pandoc
 
-Follow the [installation instructions][pd-inst].
+Follow the [installation instructions][4].
 
-[pd-inst]: https://pandoc.org/installing.html
+[4]: https://pandoc.org/installing.html
 
 ## Getting the template
 
@@ -35,15 +31,15 @@ git clone https://github.com/mat5n/iterargs-pandoc.git
 
 ## Compiling the document
 
-If you have [Make][make] installed, run `make`.  Alternatively, you
-can run the `compile.sh` script.  Finally, you could simply run
-`pandoc` by hand with the right parameters (take a look at
-`compile.sh` for instruction).  However you do run `pandoc`, you
-should end up with an updated `index.html` which you can now open in
-your browser.  (See below for [hot loading](#hot-loading) which should
-be quite useful.)
+If you have [Make][5] installed, run `make`.  Alternatively, you can
+run the `compile.sh` script.  Finally, you could simply run `pandoc`
+by hand with the right parameters (take a look at `compile.sh` for
+instruction).  However you do run `pandoc`, you should end up with an
+updated `index.html` which you can now open in your browser.  (See
+below for [hot loading][6] which should be quite useful.)
 
-[make]: https://www.gnu.org/software/make/
+[5]: https://www.gnu.org/software/make/
+[6]: #hot-loading
 
 ## Terminology 
 
@@ -75,7 +71,7 @@ Zak Johnson and Harvey Dean
 ::: 
 ```
 
-which is equivalent to the more [explicit syntax][pd-divs]
+which is equivalent to the more [explicit syntax][7]
 
 ```
 ::: {.authors}
@@ -83,7 +79,7 @@ Zak Johnson and Harvey Dean
 ::: 
 ```
 
-[pd-divs]: https://pandoc.org/MANUAL.html#divs-and-spans
+[7]: https://pandoc.org/MANUAL.html#divs-and-spans
 
 ## Highlights
 
@@ -93,10 +89,9 @@ highlight.  To create a highlight, add the attribute `hl-odd=xyz` or
 `hl-even=xyz` to any element, depending whether you're Odd or Even.
 The `xyz` part is a unique label that's up to you.
 
-[Pandoc's native syntax for spans][pd-divs] is useful here.  Below is
-an example of Odd having added a highlight to Even's argument
-consisting of two separate snippets of text.  The label they've chosen
-is `foo`:
+[Pandoc's native syntax for spans][7] is useful here.  Below is an
+example of Odd having added a highlight to Even's argument consisting
+of two separate snippets of text.  The label they've chosen is `foo`:
 
 ```
 A bit of text.  [This bit is highlighted.]{hl-odd=foo}  This isn't.
@@ -123,15 +118,15 @@ loads in that undoing after a hot load will restore the previous
 document.  (Although obviously not in your editor!)
 
 For the above to work, unfortunately, the document needs to be served
-by a web server.  If you have [Python][py-inst] installed, getting one
-up and running is very easy.  With Python 3, go to your document
+by a web server.  If you have [Python][8] installed, getting one up
+and running is very easy.  With Python 3, go to your document
 directory and issue the command
 
 ```
 python3 -m http.server 8000
 ```
 
-With [Python 2][py-2or3], use the following command instead
+With [Python 2][9], use the following command instead
 
 ```
 python -m SimpleHTTPServer 8000
@@ -140,8 +135,8 @@ python -m SimpleHTTPServer 8000
 Now you'll have a web server running on port 8000.  Point your browser
 to http://localhost:8000 and you should see your document.
 
-[py-inst]: https://www.python.org/downloads/
-[py-2or3]: https://wiki.python.org/moin/Python2orPython3
+[8]: https://www.python.org/downloads/
+[9]: https://wiki.python.org/moin/Python2orPython3
 
 ## Language files
 
@@ -151,8 +146,8 @@ language file.  This is located in `js/i18n/en.js`.
 ## Publishing the document
 
 When you decide to publish your document in one way or another
-([GitHub pages][gh-pgs] are a fine option!), you'll need to include
-the following files
+([GitHub pages][a] are a fine option!), you'll need to include the
+following files
 
 ```
 index.html
@@ -167,7 +162,7 @@ especially convenient if you decide to use GitHub pages because then
 you'll only need to push all your changes to your repository and your
 done.
 
-[gh-pgs]: https://pages.github.com
+[a]: https://pages.github.com
 
 ## Source code for `iterargs.js`
 

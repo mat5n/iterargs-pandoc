@@ -44,7 +44,7 @@ iterargsTexts = {
       "text": "Left and right swipes are recognised everywhere and produce mostly intuitive results."
     },
     "version": {
-      "text": "iterargs-pandoc 0.6.0",
+      "text": "iterargs-pandoc 0.7.0",
       "link": "https://github.com/mat5n/iterargs-pandoc"
     }
   },

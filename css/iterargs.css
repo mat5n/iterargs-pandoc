@@ -1,4 +1,28 @@
 
+/* Global variables */
+
+:root {
+    /* Fonts */
+    --ia-body-font: 'Cardo', serif;
+    --ia-heading-font: 'Oswald', sans-serif;
+    --ia-ui-font: 'Oswald', sans-serif;
+    /* Colors */
+    --ia-body-text-color: #333;
+    --ia-body-bg: #fff;
+    --ia-ui-text-color: #ddd;
+    --ia-ui-text-color-lc: #aaa;
+    --ia-ui-code-color: #fff500;
+    --ia-ui-bg: rgba(0,0,0,0.8);
+    --ia-ui-bg-solid: #333;
+    --ia-hl-odd: #FFFEAA;
+    --ia-hl-odd-strong: #D4D46A;
+    --ia-hl-even: #BCE498;
+    --ia-hl-even-strong: #8CBE5F;
+    /* Borders */
+    --ia-border: 1px solid lightgray;
+    --ia-menu-border: 1px solid #444;
+}
+
 /* Basic layout */
 
 html, body {
@@ -8,14 +32,12 @@ html, body {
 body {
     padding: 0px;
     margin: 0px;
-    background-color: #fff;
+    background-color: var(--ia-body-bg);
     z-index: 0;
 }
 
 #ia-doc {
-    font-family: 'Cardo', serif;
-    font-size: 18px;
-    color: #333333;
+    color: var(--ia-body-text-color);
 }    
 
 main {
@@ -37,7 +59,7 @@ main.ia-gap {
 }
 
 .ia-container {
-    background-color: #fff;
+    background-color: var(--ia-body-bg);
     position: absolute;
     top: 0px;
     bottom: 0px;
@@ -47,14 +69,16 @@ main.ia-gap {
 }
 
 .ia-article {
-    line-height: 1.5;
+    font-family: var(--ia-body-font);
+    font-size: 18px;
+    line-height: 1.45;
     max-width: 600px;
     padding: 0px 20px;
     margin: 40px auto 20px;
 }
 
 #ia-odd-container {
-    border-right: 1px solid lightgray;
+    border-right: var(--ia-border);
 }
 
 .ia-split #ia-odd-container {
@@ -68,7 +92,8 @@ main.ia-gap {
 /* Headings */
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--ia-heading-font);
+    font-weight: 700;
 }
 
 h1 {
@@ -78,7 +103,18 @@ h1 {
 /* Code */
 
 code {
-    font-size: 14px;
+    font-size: 80%;
+}
+
+pre {
+    line-height: 1.2;
+}
+
+/* Math */
+
+.MathJax {
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 /* Images */
@@ -98,7 +134,7 @@ figcaption {
 
 .authors {
     margin-bottom: 30px;
-    font-size: 20px;
+    font-size: 110%;
     font-style: italic;
 }
 
@@ -119,7 +155,7 @@ figcaption {
 /* Peek back */
 
 #ia-back-container {
-    border-top: 1px solid lightgray;
+    border-top: var(--ia-border);
     z-index: 1;
 }
 
@@ -139,7 +175,7 @@ figcaption {
 }
 
 #ia-peek-back-close .ia-cross {
-    fill: #333;
+    fill: var(--ia-body-text-color);
 }
 
 .ia-peek #ia-peek-back-close {
@@ -150,26 +186,64 @@ figcaption {
     display: none;
 }
 
+/* Switches */
+
+.ia-switch {
+    position: absolute;
+    width: 30px;
+    height: 17px;
+}
+
+.ia-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 17px;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.ia-slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 2px;
+    bottom: 2px;
+    border-radius: 50%;
+    background-color: var(--ia-ui-bg-solid);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.ia-ctrl-on .ia-slider:before {
+    -webkit-transform: translateX(13px);
+    -ms-transform: translateX(13px);
+    transform: translateX(13px);
+}
+
 /* Menu */
 
 #ia-menu {
     position: fixed;
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--ia-ui-font);
     font-size: 16px;
     font-weight: 200;
     left: auto;
     right: -250px;
     width: 250px;
     z-index: 3;
-    background-color: rgba(0,0,0,0.8);
-    color: #ddd;
-    box-shadow: 0px 0px 6px 2px rgba(0,0,0,0.4);
+    background-color: var(--ia-ui-bg);
+    color: var(--ia-ui-text-color);
     display: none;
     transition: right 0.4s;
 }
 
 #ia-menu.ia-fixed {
-    background-color: #333;
+    background-color: var(--ia-ui-bg-solid);
     box-shadow: none;
 }
 
@@ -191,23 +265,23 @@ figcaption {
 }
 
 #ia-menu-button .ia-burger {
-    fill: #333;
+    fill: var(--ia-body-text-color);
 }
 
 #ia-menu-button.ia-open .ia-burger {
-    fill: #ddd;
+    fill: var(--ia-ui-text-color);
 }
 
 .ia-menu-section {
     padding-bottom: 2px;
     margin-top: 0px;
     margin-bottom: 0px;
-    border-bottom: 1px solid #444;
+    border-bottom: var(--ia-menu-border);
 }
 
 #ia-nav-section {
     margin-top: 30px;
-    border-top: 1px solid #444;
+    border-top: var(--ia-menu-border);
 }
 
 .ia-menu-heading {
@@ -216,7 +290,7 @@ figcaption {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #aaa;
+    color: var(--ia-ui-text-color-lc);
 }
 
 .ia-menu-item {
@@ -232,7 +306,7 @@ figcaption {
 }
 
 .ia-nav-on {
-    color: #aaa;
+    color: var(--ia-ui-text-color-lc);
     cursor: auto;
 }
 
@@ -264,51 +338,15 @@ figcaption {
     width: 20px;
     padding-right: 10px;
     text-align: right;
-    color: #ddd;
+    color: var(--ia-ui-text-color);
     cursor: pointer;
 }
 
-/*
-@media screen and (max-width: 999px) {
-    #ia-set-section {
-	display: none;
-    }
-}
-*/
-
-/* Switches */
-
-.ia-switch {
-    position: absolute;
-    width: 30px;
-    height: 17px;
+.ia-menu-item .ia-switch {
     top: 7px;
     right: 8px;
-}
-
-.ia-slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 17px;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-.ia-slider:before {
-    position: absolute;
-    content: "";
-    height: 13px;
-    width: 13px;
-    left: 2px;
-    bottom: 2px;
-    border-radius: 50%;
-    background-color: #333;
-    -webkit-transition: .4s;
-    transition: .4s;
+    transform: scale(0.8);
+    transform-origin: center right;
 }
 
 .ia-ctrl-on .ia-slider {
@@ -316,17 +354,11 @@ figcaption {
 }
 
 #ia-odd-hl-ctrl.ia-ctrl-on .ia-slider {
-    background-color: #FFFEAA;
+    background-color: var(--ia-hl-odd);
 }
 
 #ia-even-hl-ctrl.ia-ctrl-on .ia-slider {
-    background-color: #BCE498;
-}
-
-.ia-ctrl-on .ia-slider:before {
-    -webkit-transform: translateX(13px);
-    -ms-transform: translateX(13px);
-    transform: translateX(13px);
+    background-color: var(--ia-hl-even);
 }
 
 /* Navbar */
@@ -336,8 +368,9 @@ figcaption {
     top: 2px;
     left: 2px;
     z-index: 2;
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--ia-ui-font);
     font-size: 14px;
+    font-weight: 400;
     line-height: 24px;
     cursor: pointer;
 }
@@ -356,22 +389,20 @@ figcaption {
     font-size: 17px;
 }
 
-@media screen and (min-width: 801px) {
-    #ia-navtext-short {
-	display: none;
-    }
+@media screen and (min-width: 800px) {
+    #ia-navtext-short {	display: none; }
+    #ia-navtext-long  {	display: initial; }
 }
 
 @media screen and (max-width: 800px) {
-    #ia-navtext-long {
-	display: none;
-    }
+    #ia-navtext-short {	display: initial; }
+    #ia-navtext-long  {	display: none; }
 }
 
 @media screen and (max-width: 670px) {
     #ia-navbar {
 	background-color: rgba(255,255,255,0.8);
-	border: 1px solid lightgray;
+	border: var(--ia-border);
 	border-radius: 12px;
     }
 }
@@ -406,8 +437,8 @@ figcaption {
     box-sizing: border-box;
     padding: 20px;
     z-index: 7;
-    color: #ddd;
-    font-family: 'Oswald', sans-serif;
+    color: var(--ia-ui-text-color);
+    font-family: var(--ia-ui-font);
     font-size: 16px;
     font-weight: 200;
 }
@@ -416,12 +447,12 @@ figcaption {
     #ia-help-container {
 	left: 10px;
 	right: auto;
-	width: 400px;
 	bottom: 10px;
+	width: 400px;
     }
 
     #ia-help {
-	background-color: rgba(0,0,0,0.8);
+	background-color: var(--ia-ui-bg);
 	border-radius: 30px;
     }
 
@@ -430,9 +461,10 @@ figcaption {
 	right: 15px;
     }
 
-    @media screen and (max-height: 619px) {
+    @media screen and (max-height: 620px) {
 	#ia-help-container {
 	    top: 10px;
+	    height: auto;
 	}
     }
 
@@ -444,16 +476,19 @@ figcaption {
     }
 }
 
-@media screen and (max-width: 419px) {
+@media screen and (max-width: 420px) {
     #ia-help-container {
 	left: 0px;
 	right: 0px;
 	top: 0px;
 	bottom: 0px;
+	width: auto;
+	height: auto;
     }
 
     #ia-help {
-	background-color: #333;
+	background-color: var(--ia-ui-bg-solid);
+	border-radius: initial;
     }
 
     #ia-help-button {
@@ -474,7 +509,7 @@ figcaption {
 }
 
 #ia-help kbd {
-    color: yellow;
+    color: var(--ia-ui-code-color);
 }
 
 .ia-keyseq {
@@ -488,7 +523,7 @@ figcaption {
 }
 
 #ia-version a {
-    color: #ddd;
+    color: var(--ia-ui-text-color);
 }
 
 /* Links */
@@ -520,11 +555,11 @@ a.ia-hover {
 }
 
 .ia-hl-on-odd [data-hl-odd] {
-    background-color: #FFFEAA;
+    background-color: var(--ia-hl-odd);
 }
 
 .ia-hl-on-even [data-hl-even] {
-    background-color: #BCE498;
+    background-color: var(--ia-hl-even);
 }
 
 .ia-hl-hov-odd[data-hl-odd],
@@ -533,7 +568,7 @@ a.ia-hover {
 .ia-hl-sel-odd[data-hl-odd] [data-hl-odd],
 .ia-hl-hov-odd[data-hl-odd] [data-hl-even],
 .ia-hl-sel-odd[data-hl-odd] [data-hl-even] {
-    background-color: #D4D46A;
+    background-color: var(--ia-hl-odd-strong);
 }
 
 .ia-hl-hov-even[data-hl-even],
@@ -542,33 +577,25 @@ a.ia-hover {
 .ia-hl-sel-even[data-hl-even] [data-hl-odd],
 .ia-hl-hov-even[data-hl-even] [data-hl-even],
 .ia-hl-sel-even[data-hl-even] [data-hl-even] {
-    background-color: #8CBE5F;
+    background-color: var(--ia-hl-even-strong);
 }
 
 /* Error view */
 
-#ia-error {
-    font-family: 'Cardo', serif;
-    font-size: 20px;
-    line-height: 1.5;
-    max-width: 640px;
-    margin: 50px auto;
-    padding-left: 20px;
-    padding-right: 20px;
+#ia-error-container {
+    position: fixed;
 }
 
-#ia-error > img {
-    transform-origin: top right;
-    transition: transform 0.7s;
-    transition-timing-function: ease-in-out;
+#ia-error {
+    font-size: 20px;
 }
 
 #ia-error code {
-    font-size: 18px;
+    font-size: 90%;
 }
 
 #ia-error pre {
-    font-size: 15px;
+    font-size: 75%;
     white-space: pre-wrap;
 }
 
@@ -666,7 +693,6 @@ a.ia-hover {
 
 #ia-back-container.ia-peek-in, #ia-back-container.ia-peek-out {
     animation-name: ia-peek-in;
-    /*border-top: 1px solid #aaa;*/
 }
 
 @keyframes ia-peek-to-full {
@@ -676,5 +702,4 @@ a.ia-hover {
 
 #ia-back-container.ia-peek-to-full, #ia-back-container.ia-full-to-peek {
     animation-name: ia-peek-to-full;
-    /*border-top: 1px solid #aaa;*/
 }

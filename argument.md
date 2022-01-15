@@ -222,5 +222,6 @@ menu or with the keyboard shortcuts `Shift+O` and `Shift+E`.  Press
 
 # Back matter
 
+::: {#refs}
 ## References
-
+:::
