@@ -43,7 +43,7 @@ Copyright © Facebook, Inc. and its affiliates.
 
 ## [Reagent](https://github.com/reagent-project/reagent)
 
-Copyright © 2013-2017 Dan Holmsand
+Copyright © 2013-2017 Dan Holmsand  
 Copyright © 2017 Reagent contributors
 
 [MIT license][mit]
