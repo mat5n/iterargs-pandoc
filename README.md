@@ -171,4 +171,10 @@ here, will be released as a separate project.
 
 ## Licence
 
-MIT License.  Consult the file `LICENSE` for details.
+Copyright © 2022 mat5n
+
+Distributed under the MIT License except for `iterargs.js` which is
+distributed under the [Eclipse Public License version 2.0][b].  See
+`js/NOTICE.md` for information on the software used in `iterargs.js`.
+
+[b]: https://www.eclipse.org/legal/epl-2.0/
