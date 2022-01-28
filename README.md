@@ -171,4 +171,4 @@ here, will be released as a separate project.
 
 ## Licence
 
-Eclipse Public License v 1.0
+MIT License.  Consult the file `LICENSE` for details.
