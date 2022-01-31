@@ -1,10 +1,6 @@
 
 # List of software used in `iterargs.js`
 
-## [cljs-ajax](https://github.com/JulianBirch/cljs-ajax)
-
-Distributed under the [Eclipse Public License][epl1], the same as Clojure.
-
 ## [ClojureScript](https://clojurescript.org)
 
 Copyright © Rich Hickey
