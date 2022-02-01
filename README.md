@@ -2,7 +2,7 @@
 # Pandoc template for iterative arguments
 
 This [Pandoc][1] template facilitates an argument where two competing
-theories are developed in parallel in an iterative manner so that both
+theories are developed in parallel in an [iterative manner][d] so that both
 sides of the argument have to address the opposition from the very
 beginning.
 
@@ -10,6 +10,7 @@ The document is written in [Pandoc's markdown variant][2] and compiles
 into HTML.  See [here][3] for the result.
 
 [1]: http://pandoc.org
+[d]: https://www.lesswrong.com/posts/3pq9B4WSPT8yXc8XS/iterative-arguments-alternative-to-adversarial-collaboration
 [2]: https://pandoc.org/MANUAL.html#pandocs-markdown
 [3]: http://mat5n.github.io/iterargs-pandoc/
 
